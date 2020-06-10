@@ -1,0 +1,30 @@
+
+    
+    <div class="wrapper wrapper_padding clear-fix">
+        <div class="col-1 about homepage_content">
+            <h2>About</h2>
+            <hr>
+            <p>Below you find a set of charts demonstrating the paths that you can take and the technologies that you would want to adopt in order to become a frontend, backend or a devops.</p>
+        
+        </div>
+
+        <div class="col-2 homepage_content">
+            <h2>stuff i written</h2>
+            <hr>
+
+            <% @posts.each do |post| %>
+            <h3><a href="#"><%= link_to post.title, post %></a></h3>
+            <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+            <% end %>
+        </div>
+
+        <div class="col-3 homepage_content">
+            <h2>stuff i build</h2>
+            <hr>
+            <% @projects.each do |project| %>
+            <h3><a href="#"><%= link_to project.title, project %></a></h3>
+            <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+            <% end %>
+            
+        </div>
+    </div>

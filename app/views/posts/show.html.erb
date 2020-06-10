@@ -1,0 +1,29 @@
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+        <header>
+            <p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
+            <h1><%= @post.title %></h1>
+            <hr>
+        </header>
+
+
+
+        <div id="content">
+           <%= markdown @post.content %>
+        </div>
+        
+        <hr>
+
+        <div id="share_box">
+            <p>share the Do list</p>
+            <a href="https://www.facebook.com/iqtadar.hassan.5?ref=bookmarks" target="_blank" ><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+        </div>    
+        <hr>
+        <%= render 'disqus' %>
+    </div>
+
+
+
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
